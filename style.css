@@ -5,13 +5,13 @@
 }
 
 .custom-box{
-    max-height: 800px;
+    max-height: 900px;
     box-sizing: border-box;
     box-shadow: 21px 18px 27px 5px rgba(20,8,8,0.75);
-    background-color: black;
+    background-color: rgb(234, 19, 191);
      transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 15px;
-    margin-bottom: 5px;
+    
 
 }
 
@@ -22,4 +22,5 @@
 
 .custom-box img{
     width: 100%;
+    border-radius: 15px;
 }

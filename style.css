@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-box{
+    max-height: 800px;
+    box-sizing: border-box;
+    box-shadow: 21px 18px 27px 5px rgba(20,8,8,0.75);
+    background-color: black;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    margin: ;
+
+}
+
+.custom-box:hover{
+    background-color: rgb(10, 188, 37);
+    transform: translateX(-10px);
+}
+
+.custom-box img{
+    width: 100%;
+}

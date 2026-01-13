@@ -33,11 +33,14 @@
 .custom-box img{
     width: 100%;
     border-radius: 15px;
+    
 }
 
 .rel-img{
-    border-radius: 50%;
+    border-radius: 40%;
     margin-top: 10px;
+    border: 5px solid red;
+    border-color: aquamarine;
 }
 
 .kobita-card{

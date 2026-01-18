@@ -5,8 +5,23 @@
 }
 
 .custom-nav{
-    background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
     font-size: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;      /* arrow এর প্রস্থ বাড়ালো */
+    height: 40px;     /* arrow এর উচ্চতা */
+    background-size: 100%, 100%;
+    border: 10px solid white; /* arrow 10px মোটা করে দেওয়া হলো */
+    border-radius: 50%;       /* গোল shape দিতে */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .custom-box{
@@ -41,6 +56,7 @@
     margin-top: 10px;
     border: 5px solid red;
     border-color: aquamarine;
+    width: 100%;
 }
 
 .kobita-card{

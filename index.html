@@ -1,175 +1,3092 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>লেখক আসিফ</title>
-    <link rel="icon" image-tyep="image/jpg" href="assets/image/favicon.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="আসিফ আহমেদ — বাংলাদেশের একজন সৃজনশীল কবি ও লেখকের অফিসিয়াল ওয়েবসাইট। কবিতা, বই ও সাহিত্যের জগতে আপনাকে স্বাগতম।">
+    <meta name="keywords" content="আসিফ আহমেদ, বাংলা কবিতা, বাংলাদেশ কবি, পানি লাগবো পানি, পর জনম, তোমার স্বপ্নে আমি">
+    <meta property="og:title" content="আসিফ আহমেদ — কবি ও লেখক">
+    <meta property="og:description" content="শব্দই আমার অস্ত্র, কবিতাই আমার যুদ্ধ — মানবতার পক্ষে।">
+    <meta property="og:type" content="website">
+    <title>আসিফ আহমেদ — কবি ও লেখক</title>
+    <link rel="icon" href="assets/image/favicon.jpg" type="image/jpeg">
+
+    <!-- Google Fonts - Bengali + Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ===========================
+   CSS CUSTOM PROPERTIES
+=========================== */
+        :root {
+            --ink: #0d0d0d;
+            --ink-light: #1a1a1a;
+            --paper: #faf8f3;
+            --paper-warm: #f5f0e8;
+            --paper-card: #ffffff;
+            --muted: #8a8070;
+            --muted-light: #b5ac9e;
+            --accent: #c0392b;
+            --accent-warm: #e74c3c;
+            --accent-gold: #d4a017;
+            --accent-gold-light: #f0c040;
+            --border: rgba(0, 0, 0, 0.1);
+            --border-warm: rgba(0, 0, 0, 0.07);
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.14);
+            --shadow-xl: 0 40px 100px rgba(0, 0, 0, 0.18);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 24px;
+            --radius-xl: 36px;
+            --font-body: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+            --font-serif: 'Noto Serif Bengali', 'Hind Siliguri', serif;
+            --font-display: 'Playfair Display', 'Noto Serif Bengali', serif;
+            --nav-bg: rgba(250, 248, 243, 0.85);
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        [data-theme="dark"] {
+            --ink: #f0ebe0;
+            --ink-light: #d4cfc4;
+            --paper: #121212;
+            --paper-warm: #1a1814;
+            --paper-card: #1e1c18;
+            --muted: #7a7568;
+            --muted-light: #5a5550;
+            --accent: #e05545;
+            --accent-warm: #ff6b5b;
+            --accent-gold: #d4a017;
+            --accent-gold-light: #f0c040;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-warm: rgba(255, 255, 255, 0.05);
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 40px 100px rgba(0, 0, 0, 0.6);
+            --nav-bg: rgba(18, 18, 18, 0.88);
+        }
+
+        /* ===========================
+   RESET & BASE
+=========================== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background 0.4s var(--ease), color 0.4s var(--ease);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ===========================
+   SCROLL PROGRESS
+=========================== */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* ===========================
+   LOADING SCREEN
+=========================== */
+        #loading {
+            position: fixed;
+            inset: 0;
+            background: var(--paper);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            transition: opacity 0.6s var(--ease), visibility 0.6s var(--ease);
+        }
+
+        #loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-name {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: 0.02em;
+        }
+
+        .loader-sub {
+            font-size: 0.875rem;
+            color: var(--muted);
+            letter-spacing: 0.15em;
+            font-weight: 300;
+        }
+
+        .loader-track {
+            width: 160px;
+            height: 2px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loader-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+            border-radius: 2px;
+            animation: loadBar 1.8s var(--ease) forwards;
+        }
+
+        @keyframes loadBar {
+            0% {
+                width: 0
+            }
+
+            100% {
+                width: 100%
+            }
+        }
+
+        /* ===========================
+   NAVIGATION
+=========================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 5%;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px) saturate(1.8);
+            -webkit-backdrop-filter: blur(20px) saturate(1.8);
+            border-bottom: 1px solid var(--border-warm);
+            transition: all 0.4s var(--ease);
+        }
+
+        nav.scrolled {
+            height: 60px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .nav-brand-name {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .nav-brand-tag {
+            font-size: 0.65rem;
+            color: var(--muted);
+            letter-spacing: 0.12em;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--muted);
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.25s var(--ease);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--ink);
+            background: var(--border);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: var(--paper-card);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s var(--ease);
+            color: var(--muted);
+        }
+
+        .theme-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: rotate(20deg);
+        }
+
+        .theme-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--ink);
+            transition: all 0.3s var(--ease);
+            border-radius: 2px;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: var(--paper);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 5% 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 999;
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s var(--ease);
+        }
+
+        .mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--ink);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            transition: background 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            background: var(--paper-warm);
+        }
+
+        /* ===========================
+   LAYOUT UTILITIES
+=========================== */
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-sm {
+            padding: 60px 0;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .tag::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: var(--accent);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .section-sub {
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 560px;
+            line-height: 1.75;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .centered .section-sub {
+            margin: 0 auto;
+        }
+
+        .centered .tag {
+            justify-content: center;
+        }
+
+        .centered .tag::before {
+            display: none;
+        }
+
+        .centered .tag::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: var(--accent);
+        }
+
+        /* ===========================
+   REVEAL ANIMATIONS
+=========================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* ===========================
+   HERO SECTION
+=========================== */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 72px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 80% 50%, rgba(192, 57, 43, 0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(212, 160, 23, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        [data-theme="dark"] .hero-bg {
+            background:
+                radial-gradient(ellipse 60% 80% at 80% 50%, rgba(224, 85, 69, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(212, 160, 23, 0.06) 0%, transparent 60%);
+        }
+
+        .hero-noise {
+            position: absolute;
+            inset: 0;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 60px 0;
+        }
+
+        .hero-text {
+            animation: heroFadeIn 1.1s var(--ease) both;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+            animation: heroFadeIn 1.1s 0.2s var(--ease) both;
+        }
+
+        .hero-eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.4)
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(192, 57, 43, 0)
+            }
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--ink);
+            margin-bottom: 20px;
+            animation: heroFadeIn 1.1s 0.35s var(--ease) both;
+        }
+
+        .hero-title .accent {
+            color: var(--accent);
+        }
+
+        .hero-title .gold {
+            color: var(--accent-gold);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 520px;
+            margin-bottom: 40px;
+            animation: heroFadeIn 1.1s 0.5s var(--ease) both;
+        }
+
+        .hero-quote {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--ink-light);
+            padding: 20px 24px;
+            border-left: 3px solid var(--accent);
+            background: var(--paper-warm);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-bottom: 40px;
+            animation: heroFadeIn 1.1s 0.6s var(--ease) both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            animation: heroFadeIn 1.1s 0.7s var(--ease) both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s var(--ease);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.12);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(192, 57, 43, 0.35);
+        }
+
+        .btn-primary:hover::after {
+            opacity: 1;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: transparent;
+            color: var(--ink);
+            border: 1.5px solid var(--border);
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s var(--ease);
+            cursor: pointer;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-warm);
+            animation: heroFadeIn 1.1s 0.85s var(--ease) both;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .stat-num {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+        }
+
+        /* Hero Photo */
+        .hero-photo-wrap {
+            position: relative;
+            animation: heroFadeIn 1.2s 0.4s var(--ease) both;
+        }
+
+        .hero-photo-frame {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            background: var(--paper-warm);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .hero-photo-frame:hover img {
+            transform: scale(1.04);
+        }
+
+        .hero-photo-decor {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px dashed rgba(192, 57, 43, 0.2);
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 24px;
+            left: -20px;
+            background: var(--paper-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 200px;
+        }
+
+        .hero-badge-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .hero-badge-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .hero-badge-num {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--ink);
+        }
+
+        .hero-badge-label {
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        /* Scroll indicator */
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted-light);
+            animation: heroFadeIn 1s 1.2s var(--ease) both;
+            cursor: pointer;
+        }
+
+        .scroll-mouse {
+            width: 22px;
+            height: 34px;
+            border: 1.5px solid var(--muted-light);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            padding-top: 6px;
+        }
+
+        .scroll-dot {
+            width: 3px;
+            height: 7px;
+            background: var(--muted-light);
+            border-radius: 2px;
+            animation: scrollDot 1.8s infinite;
+        }
+
+        @keyframes scrollDot {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+
+            50% {
+                transform: translateY(8px);
+                opacity: 0.3
+            }
+        }
+
+        /* ===========================
+   ABOUT SECTION
+=========================== */
+        #about {
+            background: var(--paper-warm);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-photo-wrap {
+            position: relative;
+        }
+
+        .about-photo-main {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-photo-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .about-photo-main:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-accent-box {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-gold) 100%);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .about-bio {
+            font-size: 1.05rem;
+            color: var(--ink-light);
+            line-height: 1.85;
+        }
+
+        .about-quote {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--ink);
+            padding: 22px 28px;
+            border-left: 4px solid var(--accent-gold);
+            background: var(--paper-card);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            box-shadow: var(--shadow-sm);
+            line-height: 1.7;
+        }
+
+        .about-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .interest-tag {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: var(--paper-card);
+            border: 1px solid var(--border);
+            color: var(--ink-light);
+            transition: all 0.25s var(--ease);
+        }
+
+        .interest-tag.accent {
+            background: rgba(192, 57, 43, 0.08);
+            border-color: rgba(192, 57, 43, 0.2);
+            color: var(--accent);
+        }
+
+        .interest-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ===========================
+   TIMELINE
+=========================== */
+        #journey {
+            background: var(--paper);
+        }
+
+        .timeline {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-gold), transparent);
+        }
+
+        .tl-item {
+            position: relative;
+            padding-bottom: 48px;
+        }
+
+        .tl-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .tl-dot {
+            position: absolute;
+            left: -47px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--paper);
+            box-shadow: 0 0 0 2px var(--accent);
+            transition: transform 0.3s var(--ease-bounce);
+        }
+
+        .tl-item:hover .tl-dot {
+            transform: scale(1.4);
+        }
+
+        .tl-year {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .tl-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+
+        .tl-desc {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        /* ===========================
+   BOOKS SECTION
+=========================== */
+        #books {
+            background: var(--paper-warm);
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 60px;
+        }
+
+        .book-card {
+            background: var(--paper-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.4s var(--ease);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .book-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 0 0 2px var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s var(--ease);
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .book-card:hover::after {
+            opacity: 1;
+        }
+
+        .book-cover {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: var(--paper-warm);
+            position: relative;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.06);
+        }
+
+        .book-year-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            padding: 4px 10px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .book-info {
+            padding: 24px;
+        }
+
+        .book-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .book-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .book-desc {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .book-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-warm);
+        }
+
+        .book-author {
+            font-size: 0.78rem;
+            color: var(--muted-light);
+        }
+
+        .book-link {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.2s;
+        }
+
+        .book-card:hover .book-link {
+            gap: 8px;
+        }
+
+        /* ===========================
+   POEMS SECTION
+=========================== */
+        #poems {
+            background: var(--paper);
+        }
+
+        .poems-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .poem-card {
+            background: var(--paper-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            transition: all 0.4s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poem-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 24px;
+            font-family: var(--font-display);
+            font-size: 8rem;
+            color: var(--accent);
+            opacity: 0.06;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .poem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(192, 57, 43, 0.2);
+        }
+
+        .poem-card-featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--paper-card) 60%, rgba(192, 57, 43, 0.04));
+            border-color: rgba(192, 57, 43, 0.15);
+        }
+
+        .poem-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .poem-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            background: rgba(192, 57, 43, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .poem-category {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .poem-title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        .poem-card-featured .poem-title {
+            font-size: 1.7rem;
+        }
+
+        .poem-img-wrap {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-bottom: 20px;
+            aspect-ratio: 16/7;
+        }
+
+        .poem-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .poem-card:hover .poem-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .poem-text {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            color: var(--ink-light);
+            line-height: 2;
+            white-space: pre-line;
+        }
+
+        .poem-card-featured .poem-text {
+            font-size: 1.05rem;
+        }
+
+        .poem-toggle {
+            display: none;
+            margin-top: 16px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: none;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: all 0.25s var(--ease);
+        }
+
+        .poem-toggle:hover {
+            background: rgba(192, 57, 43, 0.08);
+            border-color: var(--accent);
+        }
+
+        .poem-extra {
+            display: none;
+        }
+
+        .poem-extra.shown {
+            display: block;
+        }
+
+        /* ===========================
+   GALLERY SECTION
+=========================== */
+        #gallery {
+            background: var(--paper-warm);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 16px;
+            margin-top: 60px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            background: var(--paper-card);
+        }
+
+        .gallery-item:first-child {
+            grid-column: 1 / 3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 220px;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s var(--ease);
+        }
+
+        .gallery-item:hover::after {
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s var(--ease);
+            z-index: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay-text {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s var(--ease);
+        }
+
+        #lightbox.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            transform: scale(0.9);
+            transition: transform 0.3s var(--ease);
+        }
+
+        #lightbox.open img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ===========================
+   ACHIEVEMENTS / PRESS
+=========================== */
+        #achievements {
+            background: var(--paper);
+        }
+
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .press-card {
+            background: var(--paper-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.4s var(--ease);
+        }
+
+        .press-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .press-img {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: var(--paper-warm);
+        }
+
+        .press-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .press-card:hover .press-img img {
+            transform: scale(1.05);
+        }
+
+        .press-body {
+            padding: 24px;
+        }
+
+        .press-source {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .press-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .press-date {
+            font-size: 0.8rem;
+            color: var(--muted-light);
+        }
+
+        .achieve-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .achieve-item {
+            background: var(--paper-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: all 0.35s var(--ease);
+        }
+
+        .achieve-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(192, 57, 43, 0.2);
+        }
+
+        .achieve-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, rgba(192, 57, 43, 0.1), rgba(212, 160, 23, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .achieve-title {
+            font-family: var(--font-serif);
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+
+        .achieve-desc {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ===========================
+   TESTIMONIALS
+=========================== */
+        #testimonials {
+            background: var(--paper-warm);
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .testi-card {
+            background: var(--paper-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            position: relative;
+            transition: all 0.4s var(--ease);
+        }
+
+        .testi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testi-card::before {
+            content: '"';
+            position: absolute;
+            top: 12px;
+            left: 24px;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .testi-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+        }
+
+        .testi-text {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--ink-light);
+            line-height: 1.85;
+            margin-bottom: 22px;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-warm);
+        }
+
+        .testi-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .testi-name {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .testi-role {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        /* ===========================
+   CONTACT SECTION
+=========================== */
+        #contact {
+            background: var(--paper);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .contact-lead {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--ink-light);
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: rgba(192, 57, 43, 0.08);
+            border: 1px solid rgba(192, 57, 43, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }
+
+        .contact-val {
+            font-size: 0.95rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 24px;
+            border: 1.5px solid var(--border);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: all 0.25s var(--ease);
+        }
+
+        .social-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--paper-card);
+            border: 1px solid var(--border-warm);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 8px;
+            letter-spacing: 0.04em;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--paper-warm);
+            color: var(--ink);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.25s var(--ease);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--accent);
+            background: var(--paper-card);
+            box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.08);
+        }
+
+        .form-textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--muted-light);
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-btn:hover {
+            background: var(--accent-warm);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(192, 57, 43, 0.35);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 16px;
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            border-radius: var(--radius-md);
+            color: #27ae60;
+            font-weight: 600;
+            margin-top: 14px;
+        }
+
+        /* ===========================
+   FOOTER
+=========================== */
+        footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 50px 0 30px;
+        }
+
+        [data-theme="dark"] footer {
+            background: #0a0a0a;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 24px;
+        }
+
+        .footer-brand-name {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .footer-brand-tag {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.12em;
+            margin-top: 3px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+            transition: color 0.25s;
+        }
+
+        .footer-nav a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-copy {
+            font-size: 0.82rem;
+        }
+
+        .footer-heart {
+            color: var(--accent);
+        }
+
+        /* ===========================
+   BACK TO TOP
+=========================== */
+        #back-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.35s var(--ease);
+            z-index: 800;
+        }
+
+        #back-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        #back-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(192, 57, 43, 0.4);
+        }
+
+        #back-top svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ===========================
+   SECTION DIVIDER
+=========================== */
+        .divider {
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+            border-radius: 2px;
+            margin: 16px 0 24px;
+        }
+
+        .centered .divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===========================
+   RESPONSIVE
+=========================== */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-photo-wrap {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-badge {
+                left: 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .section {
+                padding: 72px 0;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .poems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .achieve-list {
+                grid-template-columns: 1fr;
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .contact-form {
+                padding: 28px;
+            }
+
+            .press-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-badge {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-ghost {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item:first-child {
+                grid-column: auto;
+            }
+        }
+
+        /* ===========================
+   MISC UTILITIES
+=========================== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        ::selection {
+            background: rgba(192, 57, 43, 0.15);
+            color: var(--ink);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--paper);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--muted-light);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-nav sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"> আসিফ আহমেদ</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">হোমপেজ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">সম্পর্কে</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#publication">পাবলিকেশন</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#poem">কবিতা</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">যোগাযোগ</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" role="progressbar" aria-label="Scroll progress"></div>
 
-    <!-- Navbar End -->
-
-    <!-- Slide Start -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide mt-5 container " data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item">
-            <img src="assets/image/slide/1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/image/slide/2.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/image/slide/3.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item active">
-            <img src="assets/image/book/pani.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/image/book/por.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/image/book/toma.jpg" class="d-block w-100" alt="...">
+    <!-- Loading Screen -->
+    <div id="loading" aria-hidden="true">
+        <div class="loader-name">আসিফ আহমেদ</div>
+        <div class="loader-sub">কবি ও লেখক</div>
+        <div class="loader-track">
+            <div class="loader-fill"></div>
         </div>
     </div>
 
-    <!-- Left/Previous Button -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Primary navigation">
+        <a href="#home" class="nav-brand" aria-label="Home">
+            <span class="nav-brand-name">আসিফ আহমেদ</span>
+            <span class="nav-brand-tag">কবি ও লেখক</span>
+        </a>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="#home" class="active" role="menuitem">হোম</a></li>
+            <li role="none"><a href="#about" role="menuitem">পরিচিতি</a></li>
+            <li role="none"><a href="#books" role="menuitem">বইসমূহ</a></li>
+            <li role="none"><a href="#poems" role="menuitem">কবিতা</a></li>
+            <li role="none"><a href="#gallery" role="menuitem">গ্যালারি</a></li>
+            <li role="none"><a href="#achievements" role="menuitem">অর্জন</a></li>
+            <li role="none"><a href="#contact" role="menuitem">যোগাযোগ</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+                <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <path
+                        d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+                <svg id="icon-moon" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                </svg>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="mobileMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-    <!-- Right/Next Button -->
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <a href="#home">হোম</a>
+        <a href="#about">পরিচিতি</a>
+        <a href="#books">বইসমূহ</a>
+        <a href="#poems">কবিতা</a>
+        <a href="#gallery">গ্যালারি</a>
+        <a href="#achievements">অর্জন</a>
+        <a href="#testimonials">পাঠক মতামত</a>
+        <a href="#contact">যোগাযোগ</a>
+    </div>
 
-    <!-- Slide End -->
-
-    <!-- সম্পর্কে শুরু -->
-    <section class="container bg-primary text-light text-center mt-5 custom-about" id="about">
-        <div class="row">
-            <div class="col-md-6 col-lg-6">
-                <h2 class="pt-3">লেখকের সম্পর্কে</h2>
-                <p>আমি আসিফ আহমেদ, একজন সাহিত্যে আগ্রহী লেখক। গল্প, কবিতা ও প্রবন্ধ রচনায় আমার আগ্রহ রয়েছে। আমার
-                    লেখার লক্ষ্য পাঠকের মনে অনুভূতি ও ভাবনার সেতুবন্ধন তৈরি করা। প্রতিটি লেখা আমি যত্নের সঙ্গে সাজাই এবং
-                    পাঠকের জন্য সহজবোধ্য ও প্রাঞ্জল রাখতে চেষ্টা করি।
-                </p>
-
-            </div>
-            <div class="col-md-6 col-lg-6">
-             
-                    <img class="rel-img" src="assets/image/personal image/1.jpg" alt="">
-                    <h3> আসিফ আহমেদ</h3>
-                    <p>লেখক</p>
-             
-                <div>
-
-                </div>
-
-    </section>
-
-    <!-- সম্পর্কে শেষ -->
-
-
-
-    <!-- প্রকাশনি শুরু -->
-    <section class="pt-5 bg-warning container" id="publication">
-        <h1 class="text-center container text-light">প্রকাশিত কবিতা সমূহ</h1>
+    <!-- =====================
+     HOME / HERO
+===================== -->
+    <section id="home" aria-label="Hero section">
+        <div class="hero-bg"></div>
+        <div class="hero-noise"></div>
         <div class="container">
-            <div class="row g-3">
-                <div class="col-md-4  col-lg-4 ">
-                    <div class="custom-box  text-light text-center ">
-                        <img src="assets/image/book/pani.jpg" alt="">
-                        <div>
-                            <h4 class="pt-3">বইয়ের নাম: পানি লাগবো পানি?</h4>
-                        </div>
+            <div class="hero-inner">
+
+                <div class="hero-text">
+                    <div class="hero-eyebrow">
+                        <div class="hero-eyebrow-dot"></div>
+                        বাংলাদেশের সৃজনশীল কলম
                     </div>
-                </div>
-                <div class="col-md-4  col-lg-4 ">
-                    <div class="custom-box  text-light text-center ">
-                        <img src="assets/image/book/por.jpg" alt="">
-                        <div>
-                            <h4 class="pt-3">বইয়ের নাম: পর জনম</h4>
-                        </div>
+
+                    <h1 class="hero-title">
+                        আসিফ<br>
+                        <span class="accent">আহমেদ</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        কবি, গল্পকার ও সাহিত্যানুরাগী — শব্দের মাধ্যমে মানুষের হৃদয় স্পর্শ করার সাধনায় নিবেদিত একটি
+                        সৃষ্টিশীল মন।
+                    </p>
+
+                    <blockquote class="hero-quote">
+                        "শব্দই আমার অস্ত্র, কবিতাই আমার যুদ্ধ — মানবতার পক্ষে।"
+                    </blockquote>
+
+                    <div class="hero-actions">
+                        <a href="#books" class="btn-primary">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+                            </svg>
+                            বইসমূহ দেখুন
+                        </a>
+                        <a href="#poems" class="btn-ghost">
+                            কবিতা পড়ুন →
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-4  col-lg-4 ">
-                    <div class="custom-box  text-light text-center ">
-                        <img src="assets/image/book/toma.jpg" alt="">
-                        <div>
-                            <h4 class="pt-3">বইয়ের নাম: তোমার স্বপ্নে আমি</h4>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">৩+</span>
+                            <span class="stat-label">প্রকাশিত বই</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">৭+</span>
+                            <span class="stat-label">বছরের যাত্রা</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">হাজার+</span>
+                            <span class="stat-label">পাঠকের ভালোবাসা</span>
                         </div>
                     </div>
                 </div>
 
+                <div class="hero-photo-wrap">
+                    <div class="hero-photo-decor"></div>
+                    <div class="hero-photo-frame">
+                        <img src="assets/image/personal image/1.jpg" alt="কবি আসিফ আহমেদ" loading="eager">
+                    </div>
+                    <div class="hero-badge">
+                        <div class="hero-badge-icon">📚</div>
+                        <div class="hero-badge-text">
+                            <span class="hero-badge-num">২০২৬</span>
+                            <span class="hero-badge-label">প্রথম আলো ফিচার্ড</span>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+
+        <div class="scroll-hint" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})"
+            aria-hidden="true">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>নিচে স্ক্রোল করুন</span>
+        </div>
+    </section>
+
+
+    <!-- =====================
+     ABOUT
+===================== -->
+    <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+            <div class="about-grid">
+
+                <div class="about-photo-wrap reveal-left">
+                    <div class="about-photo-main">
+                        <img src="assets/image/personal image/1.jpg" alt="আসিফ আহমেদ — লেখক পরিচিতি" loading="lazy">
+                    </div>
+                    <div class="about-accent-box"></div>
+                </div>
+
+                <div class="about-text reveal-right">
+                    <div>
+                        <div class="tag">লেখক পরিচিতি</div>
+                        <h2 class="section-title" id="about-title">কলম হাতে নেওয়ার <em>যাত্রা</em></h2>
+                        <div class="divider"></div>
+                    </div>
+
+                    <p class="about-bio">
+                        আমি আসিফ আহমেদ। ছেলেবেলা থেকেই শব্দের প্রতি আমার এক অদ্ভুত টান অনুভব করতাম। গ্রামের মাঠে বসে
+                        সন্ধ্যার আলো দেখতে দেখতে মনে হতো — এই সৌন্দর্যটুকু ধরে রাখতে হবে কোথাও।
+                    </p>
+                    <p class="about-bio">
+                        সেখান থেকেই শুরু কলমের সঙ্গে বন্ধুত্ব। আজ গল্প, কবিতা ও প্রবন্ধের মাধ্যমে আমি পাঠকের কাছে
+                        পৌঁছাতে চাই — সেই একই অনুভূতি নিয়ে, যেটা একসময় আমাকে লিখতে অনুপ্রাণিত করেছিল।
+                    </p>
+                    <p class="about-bio">
+                        আমার বিশ্বাস, সাহিত্য মানুষকে একে অপরের কাছে নিয়ে যায়। একটি কবিতা হাজার মাইল দূরের দুটি মনকে
+                        যুক্ত করতে পারে। এই সংযোগের শক্তিতেই আমার লেখার অনুপ্রেরণা।
+                    </p>
+
+                    <blockquote class="about-quote">
+                        "সাহিত্য হলো সেই আলো যা অন্ধকারেও পথ দেখায়। আমি সেই আলোর বাহক হতে চাই।"
+                    </blockquote>
+
+                    <div class="about-interests">
+                        <span class="interest-tag accent">কবিতা</span>
+                        <span class="interest-tag accent">ছোট গল্প</span>
+                        <span class="interest-tag">প্রবন্ধ</span>
+                        <span class="interest-tag">সাহিত্য সমালোচনা</span>
+                        <span class="interest-tag">বাংলা সাহিত্য</span>
+                        <span class="interest-tag">দেশপ্রেম</span>
+                    </div>
+                </div>
 
             </div>
         </div>
     </section>
-    <!-- প্রকাশনি শেষ -->
 
-    <!-- কবিতা শুরু -->
-    <section class="container  custom-poem " id="poem">
-        <h3 class="text-center text-light pt-4">কবিতা সমগ্র</h3>
-        <div class="row">
-            <div class="col-md-4 col-lg-4">
-                <div class="kobita-card">
-                    <img src="kobita/kobita-img.jpg" alt="">
-                    <h4>কবিতার নাম: নব উদ্যম</h4>
-                    <p>এলো আজ নব উদ্যম <br> হলো পঁচিশও অবসান <br>
-                        ঘুরেফিরে পৌষ-মাঘ <br> নিয়ে শীতকাল ভিন্নতর।</p>
-                    <a href="nobouddom.html">আরও পড়ুন</a>
+
+    <!-- =====================
+     TIMELINE / JOURNEY
+===================== -->
+    <section id="journey" class="section" aria-labelledby="journey-title">
+        <div class="container">
+            <div class="section-header centered reveal" style="margin-bottom: 60px;">
+                <div class="tag">সাহিত্য যাত্রা</div>
+                <h2 class="section-title" id="journey-title">আমার <em>পথচলা</em></h2>
+                <div class="divider"></div>
+                <p class="section-sub">২০১৯ থেকে আজ পর্যন্ত — শব্দের সাথে এক অটুট বন্ধনের গল্প।</p>
+            </div>
+
+            <div class="timeline">
+                <div class="tl-item reveal">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">২০১৯</div>
+                    <div class="tl-title">প্রথম লেখা প্রকাশ</div>
+                    <div class="tl-desc">স্থানীয় সাহিত্য পত্রিকায় প্রথম কবিতা প্রকাশিত হয়। পাঠকদের উষ্ণ সাড়া পেয়ে
+                        লেখালেখিতে আরও মনোযোগী হই।</div>
+                </div>
+                <div class="tl-item reveal delay-1">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">২০২১</div>
+                    <div class="tl-title">অনলাইনে সক্রিয়তা</div>
+                    <div class="tl-desc">সামাজিক মাধ্যমে নিয়মিত কবিতা শেয়ার শুরু। হাজারো পাঠকের ভালোবাসা পাই এবং একটি
+                        বৃহত্তর পাঠকসমাজের সাথে যুক্ত হই।</div>
+                </div>
+                <div class="tl-item reveal delay-2">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">২০২৩</div>
+                    <div class="tl-title">প্রথম বই: পর জনম ও তোমার স্বপ্নে আমি</div>
+                    <div class="tl-desc">প্রথম দুটি কাব্যগ্রন্থ একই বছর প্রকাশিত হয়। বইমেলায় পাঠকদের ব্যাপক সাড়া পাই
+                        এবং লেখক হিসেবে আনুষ্ঠানিক যাত্রা শুরু হয়।</div>
+                </div>
+                <div class="tl-item reveal delay-3">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">২০২৪</div>
+                    <div class="tl-title">পানি লাগবো পানি?</div>
+                    <div class="tl-desc">তৃতীয় কাব্যগ্রন্থ প্রকাশিত। এটি এখন পর্যন্ত সবচেয়ে বেশি বিক্রিত বই হিসেবে
+                        স্বীকৃতি পায়।</div>
+                </div>
+                <div class="tl-item reveal delay-4">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">২০২৬</div>
+                    <div class="tl-title">প্রথম আলোতে বিশেষ প্রতিবেদন</div>
+                    <div class="tl-desc">দেশের প্রধান দৈনিক প্রথম আলোতে বিশেষ প্রতিবেদন প্রকাশিত হয়, জাতীয় পর্যায়ে
+                        পরিচিতি লাভ করেন।</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- কবিতা শেষ -->
+
+    <!-- =====================
+     BOOKS
+===================== -->
+    <section id="books" class="section" aria-labelledby="books-title">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="tag">প্রকাশনা</div>
+                <h2 class="section-title" id="books-title">প্রকাশিত <em>বইসমূহ</em></h2>
+                <div class="divider"></div>
+                <p class="section-sub">প্রতিটি বই একটি অনুভূতির গল্প — পাঠকের হৃদয়ে পৌঁছানোর প্রচেষ্টা।</p>
+            </div>
+
+            <div class="books-grid">
+
+                <article class="book-card reveal delay-1">
+                    <div class="book-cover">
+                        <img src="assets/image/book/pani.jpg" alt="পানি লাগবো পানি? — আসিফ আহমেদ" loading="lazy">
+                        <div class="book-year-badge">২০২৪</div>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-category">কাব্যগ্রন্থ</div>
+                        <h3 class="book-title">পানি লাগবো পানি?</h3>
+                        <p class="book-desc">এই বইয়ে জীবনের তৃষ্ণা, মানুষের প্রতি আকাঙ্ক্ষা এবং অস্তিত্বের প্রশ্নগুলো
+                            কবিতার ভাষায় উঠে এসেছে।</p>
+                        <div class="book-footer">
+                            <span class="book-author">আসিফ আহমেদ</span>
+                            <span class="book-link">আরও পড়ুন →</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card reveal delay-2">
+                    <div class="book-cover">
+                        <img src="assets/image/book/por.jpg" alt="পর জনম — আসিফ আহমেদ" loading="lazy">
+                        <div class="book-year-badge">২০২৩</div>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-category">কাব্যগ্রন্থ</div>
+                        <h3 class="book-title">পর জনম</h3>
+                        <p class="book-desc">পরজন্মের স্বপ্ন, প্রেম ও বিচ্ছেদের ব্যথা নিয়ে রচিত এই কাব্যগ্রন্থ পাঠকের
+                            মনে গভীর ছাপ ফেলেছে।</p>
+                        <div class="book-footer">
+                            <span class="book-author">আসিফ আহমেদ</span>
+                            <span class="book-link">আরও পড়ুন →</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card reveal delay-3">
+                    <div class="book-cover">
+                        <img src="assets/image/book/toma.jpg" alt="তোমার স্বপ্নে আমি — আসিফ আহমেদ" loading="lazy">
+                        <div class="book-year-badge">২০২৩</div>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-category">কাব্যগ্রন্থ</div>
+                        <h3 class="book-title">তোমার স্বপ্নে আমি</h3>
+                        <p class="book-desc">প্রিয়জনের স্বপ্নে বিচরণের অনুভূতি নিয়ে রচিত এই বইটি প্রেম, বিরহ ও আশার এক
+                            অপূর্ব সমন্বয়।</p>
+                        <div class="book-footer">
+                            <span class="book-author">আসিফ আহমেদ</span>
+                            <span class="book-link">আরও পড়ুন →</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <!-- =====================
+     POEMS
+===================== -->
+    <section id="poems" class="section" aria-labelledby="poems-title">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="tag">কবিতা সমগ্র</div>
+                <h2 class="section-title" id="poems-title">কবিতার <em>জগতে</em></h2>
+                <div class="divider"></div>
+                <p class="section-sub">শব্দের গভীরে ডুব দিন — অনুভব করুন প্রতিটি পঙক্তির স্পন্দন।</p>
+            </div>
+
+            <div class="poems-grid">
+
+                <!-- Featured Poem -->
+                <article class="poem-card poem-card-featured reveal">
+                    <div class="poem-meta">
+                        <div class="poem-icon">✍️</div>
+                        <span class="poem-category">বিশেষ কবিতা</span>
+                    </div>
+                    <h3 class="poem-title">নব উদ্যম</h3>
+                    <div class="poem-img-wrap">
+                        <img src="kobita/kobita-img.jpg" alt="নব উদ্যম কবিতার ছবি" loading="lazy">
+                    </div>
+                    <div class="poem-text">এলো আজ নব উদ্যম
+                        হলো পঁচিশও অবসান
+                        ঘুরেফিরে পৌষ-মাঘ
+                        নিয়ে শীতকাল ভিন্নতর।
+
+                        অগ্রাহায়ণে যাত্রা শীতের
+                        সকাল দিগন্ত পার
+                        বেয়ে গাছপালার উপর
+                        কুয়াশার চাদর গায়ে থান।</div>
+                    <button class="poem-toggle" onclick="togglePoem(this)" data-expanded="false">সম্পূর্ণ কবিতা পড়ুন
+                        ↓</button>
+                    <div class="poem-extra">
+                        <div class="poem-text" style="margin-top:16px">ক্রমে নব দিনের আগমন আসে
+                            পৌষ পেরিয়ে,
+                            মাঘে ঘোমটা খোলা শীতের
+                            সকাল ঘটায় পূর্ণরুপ—
+
+                            প্রতাপশালী সূর্যটা ঢাকা
+                            পড়ে কুয়াশার ভারী আবরণে,
+                            লজ্জা রাঙা রুপ নিয়ে
+                            উঁকি দেয় পূর্ব দিগন্তে।
+
+                            সোনাঝরা এক চিলতে
+                            রোদ যেনো শীতার্ত শরীরে দুর্লভ।
+                            খেজুর রসের কদর
+                            ভাপা পিঠা আর ক্ষুধার্ত মন—
+
+                            কুয়াশারা বন্ধু হয়ে
+                            রাত জাগে সারাক্ষণ
+                            অবহেলে করছে
+                            যারা রাত্রি নিরসন।</div>
+                    </div>
+                </article>
+
+                <!-- Poem 2 -->
+                <article class="poem-card reveal delay-1">
+                    <div class="poem-meta">
+                        <div class="poem-icon">🌸</div>
+                        <span class="poem-category">প্রেমের কবিতা</span>
+                    </div>
+                    <h3 class="poem-title">তোমার কাছে ফেরা</h3>
+                    <div class="poem-text">তোমার স্মৃতির পথে হেঁটে
+                        ফিরে আসি বারবার,
+                        জানি তুমি নেই সেখানে
+                        তবু মন মানে না আর।
+
+                        শূন্য ঘরে তোমার গন্ধ
+                        আলো হয়ে ভাসে,
+                        প্রতিটি সন্ধ্যা তোমাকে
+                        আরও কাছে টানে।</div>
+                </article>
+
+                <!-- Poem 3 -->
+                <article class="poem-card reveal delay-2">
+                    <div class="poem-meta">
+                        <div class="poem-icon">🌿</div>
+                        <span class="poem-category">প্রকৃতির কবিতা</span>
+                    </div>
+                    <h3 class="poem-title">বৃষ্টির গান</h3>
+                    <div class="poem-text">বৃষ্টি পড়ে টাপুর টুপুর
+                        মাটির বুকে মিশে,
+                        মেঘের ভিড়ে রোদ লুকিয়ে
+                        হাসে আড়াল ঘেঁষে।
+
+                        প্রতিটি ফোঁটায় জীবনের কথা
+                        মাটি শুনে মনে,
+                        বৃষ্টিতে ভেজা পৃথিবীটা
+                        জাগে নতুন আনে।</div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================
+     GALLERY
+===================== -->
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="tag">ছবির গল্প</div>
+                <h2 class="section-title" id="gallery-title">আলোকচিত্র <em>গ্যালারি</em></h2>
+                <div class="divider"></div>
+                <p class="section-sub">স্মৃতির আলোয় ধরে রাখা মুহূর্তগুলো।</p>
+            </div>
+
+            <div class="gallery-grid reveal">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image/slide/1.jpg" alt="আসিফ আহমেদ — সাহিত্য অনুষ্ঠান" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">সাহিত্য অনুষ্ঠান</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image/slide/2.jpg" alt="আসিফ আহমেদ — বইমেলা" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">বইমেলা</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image/slide/3.jpg" alt="আসিফ আহমেদ" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">লেখকের মুহূর্ত</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image/book/pani.jpg" alt="পানি লাগবো পানি? বইয়ের প্রচ্ছদ" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">পানি লাগবো পানি?</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image/book/por.jpg" alt="পর জনম বইয়ের প্রচ্ছদ" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">পর জনম</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image/book/toma.jpg" alt="তোমার স্বপ্নে আমি বইয়ের প্রচ্ছদ" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-text">তোমার স্বপ্নে আমি</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+
+    <!-- =====================
+     ACHIEVEMENTS
+===================== -->
+    <section id="achievements" class="section" aria-labelledby="achieve-title">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="tag">অর্জন ও স্বীকৃতি</div>
+                <h2 class="section-title" id="achieve-title">মিডিয়া ও <em>অর্জন</em></h2>
+                <div class="divider"></div>
+                <p class="section-sub">পাঠক ও গণমাধ্যমের স্বীকৃতি — একজন কবির সবচেয়ে বড় পুরস্কার।</p>
+            </div>
+
+            <!-- Press Feature -->
+            <div class="press-grid reveal">
+                <article class="press-card">
+                    <div class="press-img">
+                        <img src="assets/image/book/prothomalo-bangla_2026-01-13_crjsr4xf_bnp-nazrul-ec-130126.avif"
+                            alt="প্রথম আলো — আসিফ আহমেদ বিশেষ প্রতিবেদন" loading="lazy">
+                    </div>
+                    <div class="press-body">
+                        <div class="press-source">প্রথম আলো</div>
+                        <h3 class="press-title">তরুণ কবি আসিফ আহমেদের লেখায় জীবনের গভীরতম কথা</h3>
+                        <div class="press-date">১৩ জানুয়ারি ২০২৬</div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Achievements Grid -->
+            <div class="achieve-list" style="margin-top: 32px;">
+                <div class="achieve-item reveal delay-1">
+                    <div class="achieve-icon">📚</div>
+                    <div>
+                        <div class="achieve-title">৩টি কাব্যগ্রন্থ প্রকাশ</div>
+                        <div class="achieve-desc">২০২৩ ও ২০২৪ সালে তিনটি কাব্যগ্রন্থ প্রকাশিত, যা পাঠকমহলে ব্যাপক সাড়া
+                            জাগিয়েছে।</div>
+                    </div>
+                </div>
+                <div class="achieve-item reveal delay-2">
+                    <div class="achieve-icon">📰</div>
+                    <div>
+                        <div class="achieve-title">প্রথম আলো ফিচার</div>
+                        <div class="achieve-desc">বাংলাদেশের শীর্ষ দৈনিক প্রথম আলোতে বিশেষ প্রতিবেদনে স্থান পেয়ে জাতীয়
+                            পরিচিতি লাভ।</div>
+                    </div>
+                </div>
+                <div class="achieve-item reveal delay-3">
+                    <div class="achieve-icon">💬</div>
+                    <div>
+                        <div class="achieve-title">হাজারো পাঠকের ভালোবাসা</div>
+                        <div class="achieve-desc">সামাজিক মাধ্যমে লক্ষাধিক পাঠকের সাথে সংযুক্ত, কবিতার পাতায় নিরন্তর
+                            মন্তব্য ও প্রতিক্রিয়া।</div>
+                    </div>
+                </div>
+                <div class="achieve-item reveal delay-4">
+                    <div class="achieve-icon">🏆</div>
+                    <div>
+                        <div class="achieve-title">বেস্টসেলার স্বীকৃতি</div>
+                        <div class="achieve-desc">"পানি লাগবো পানি?" সর্বাধিক বিক্রিত বই হিসেবে পাঠকমহলে বিশেষ স্থান
+                            অর্জন করেছে।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================
+     TESTIMONIALS
+===================== -->
+    <section id="testimonials" class="section" aria-labelledby="testi-title">
+        <div class="container">
+            <div class="section-header centered reveal">
+                <div class="tag">পাঠক মতামত</div>
+                <h2 class="section-title" id="testi-title">পাঠকের <em>কথা</em></h2>
+                <div class="divider"></div>
+                <p class="section-sub">পাঠকের হৃদয়ের কথাই একজন লেখকের সবচেয়ে বড় পুরস্কার।</p>
+            </div>
+
+            <div class="testi-grid">
+
+                <div class="testi-card reveal delay-1">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"পানি লাগবো পানি?" পড়ে চোখে জল এসে গেল। এত সহজ শব্দে এত গভীর অনুভূতি — আসিফ
+                        আহমেদ সত্যিই অসাধারণ।</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">র</div>
+                        <div>
+                            <div class="testi-name">রাহেলা বেগম</div>
+                            <div class="testi-role">পাঠক, ঢাকা</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card reveal delay-2">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"পর জনম" বইটি আমার জীবনের সাথে এতটাই মিলে গেছে যে মনে হলো এই কবিতাগুলো আমার
+                        কথা বলছে। অসাধারণ লেখনী।</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">ম</div>
+                        <div>
+                            <div class="testi-name">মোহাম্মদ তানভীর</div>
+                            <div class="testi-role">পাঠক, চট্টগ্রাম</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card reveal delay-3">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"তোমার স্বপ্নে আমি" পড়ার পর রাতে ঘুম আসেনি। কবিতার প্রতিটি লাইন যেন মনের কথা
+                        বলছে। আসিফ ভাইয়ের লেখা অনন্য।</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">ফ</div>
+                        <div>
+                            <div class="testi-name">ফারহানা আক্তার</div>
+                            <div class="testi-role">পাঠক, সিলেট</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================
+     CONTACT
+===================== -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 60px;">
+                <div class="tag">যোগাযোগ</div>
+                <h2 class="section-title" id="contact-title">কথা বলুন <em>আমার সাথে</em></h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info reveal-left">
+                    <p class="contact-lead">
+                        "প্রিয় পাঠক, আপনার মতামত ও ভালোবাসাই আমার লেখার অনুপ্রেরণা। যেকোনো কথা জানাতে দ্বিধা করবেন না।"
+                    </p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <div class="contact-label">ইমেইল</div>
+                            <div class="contact-val">asif.ahmed.writer@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <div class="contact-label">অবস্থান</div>
+                            <div class="contact-val">বাংলাদেশ</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="contact-label" style="margin-bottom: 12px;">সামাজিক মাধ্যম</div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                                </svg>
+                                ফেসবুক
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                                ইনস্টাগ্রাম
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                    <polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                                </svg>
+                                ইউটিউব
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-right">
+                    <div class="contact-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">আপনার নাম</label>
+                            <input class="form-input" type="text" id="name" placeholder="আপনার নাম লিখুন"
+                                autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">ইমেইল ঠিকানা</label>
+                            <input class="form-input" type="email" id="email" placeholder="আপনার ইমেইল লিখুন"
+                                autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="subject">বিষয়</label>
+                            <input class="form-input" type="text" id="subject" placeholder="বার্তার বিষয়">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">বার্তা</label>
+                            <textarea class="form-textarea" id="message" placeholder="আপনার বার্তা লিখুন..."></textarea>
+                        </div>
+                        <button class="form-btn" onclick="submitForm()">বার্তা পাঠান ✉️</button>
+                        <div class="form-success" id="formSuccess">
+                            ✅ আপনার বার্তা সফলভাবে পাঠানো হয়েছে। শীঘ্রই উত্তর পাবেন।
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <div class="footer-brand-name">আসিফ আহমেদ</div>
+                    <div class="footer-brand-tag">কবি ও লেখক · বাংলাদেশ</div>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="#home">হোম</a>
+                    <a href="#about">পরিচিতি</a>
+                    <a href="#books">বইসমূহ</a>
+                    <a href="#poems">কবিতা</a>
+                    <a href="#contact">যোগাযোগ</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© ২০২৬ আসিফ আহমেদ। সর্বস্বত্ব সংরক্ষিত।</p>
+                <p class="footer-copy">তৈরি হয়েছে <span class="footer-heart">♥</span> দিয়ে — বাংলা সাহিত্যের প্রতি
+                    ভালোবাসায়</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-top" aria-label="উপরে যান">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+
+    <script>
+        // =====================
+        // LOADING
+        // =====================
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loading');
+                if (loader) loader.classList.add('hidden');
+                // Trigger initial reveal
+                checkReveal();
+            }, 1800);
+        });
+
+        // =====================
+        // THEME
+        // =====================
+        const html = document.documentElement;
+        const themeBtn = document.getElementById('themeBtn');
+        const iconSun = document.getElementById('icon-sun');
+        const iconMoon = document.getElementById('icon-moon');
+
+        const savedTheme = localStorage.getItem('asif-theme') || 'light';
+        setTheme(savedTheme);
+
+        function setTheme(t) {
+            html.setAttribute('data-theme', t);
+            localStorage.setItem('asif-theme', t);
+            if (t === 'dark') {
+                iconSun.style.display = 'none';
+                iconMoon.style.display = 'block';
+            } else {
+                iconSun.style.display = 'block';
+                iconMoon.style.display = 'none';
+            }
+        }
+
+        themeBtn.addEventListener('click', () => {
+            const cur = html.getAttribute('data-theme');
+            setTheme(cur === 'dark' ? 'light' : 'dark');
+        });
+
+        // =====================
+        // HAMBURGER
+        // =====================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            const open = hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // =====================
+        // SCROLL BEHAVIORS
+        // =====================
+        const navbar = document.getElementById('navbar');
+        const scrollProgress = document.getElementById('scroll-progress');
+        const backTop = document.getElementById('back-top');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id], section[id]');
+
+        function onScroll() {
+            const scrollY = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0;
+            scrollProgress.style.width = pct + '%';
+
+            // Navbar scroll state
+            navbar.classList.toggle('scrolled', scrollY > 40);
+
+            // Back to top
+            backTop.classList.toggle('visible', scrollY > 400);
+
+            // Active nav link
+            let current = '';
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 100;
+                if (scrollY >= top) current = sec.getAttribute('id');
+            });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+
+            // Reveal
+            checkReveal();
+        }
+
+        function checkReveal() {
+            const els = document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible)');
+            els.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // =====================
+        // SMOOTH SCROLL
+        // =====================
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // =====================
+        // POEM TOGGLE
+        // =====================
+        function togglePoem(btn) {
+            const card = btn.closest('.poem-card');
+            const extra = card.querySelector('.poem-extra');
+            const expanded = btn.getAttribute('data-expanded') === 'true';
+            if (expanded) {
+                extra.classList.remove('shown');
+                btn.textContent = 'সম্পূর্ণ কবিতা পড়ুন ↓';
+                btn.setAttribute('data-expanded', 'false');
+            } else {
+                extra.classList.add('shown');
+                btn.textContent = 'সংক্ষিপ্ত করুন ↑';
+                btn.setAttribute('data-expanded', 'true');
+            }
+        }
+
+        // Show poem toggle after page loads
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.poem-toggle').forEach(btn => {
+                btn.style.display = 'inline-flex';
+            });
+        });
+
+        // =====================
+        // LIGHTBOX
+        // =====================
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(e) {
+            if (!e || e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox({ target: lightbox });
+        });
+
+        // =====================
+        // CONTACT FORM
+        // =====================
+        function submitForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('অনুগ্রহ করে সব প্রয়োজনীয় তথ্য পূরণ করুন।');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('অনুগ্রহ করে সঠিক ইমেইল ঠিকানা দিন।');
+                return;
+            }
+
+            const btn = document.querySelector('.form-btn');
+            btn.textContent = 'পাঠানো হচ্ছে...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('formSuccess').style.display = 'block';
+                btn.textContent = 'বার্তা পাঠান ✉️';
+                btn.disabled = false;
+                ['name', 'email', 'subject', 'message'].forEach(id => {
+                    document.getElementById(id).value = '';
+                });
+            }, 1200);
+        }
+
+        // Allow Enter key on inputs
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('keypress', e => {
+                if (e.key === 'Enter') submitForm();
+            });
+        });
+    </script>
+
 </body>
 
 </html>
